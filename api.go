@@ -30,7 +30,9 @@ func PostRqstHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	// load env values
 	godotenv.Load(".env")
+
 	r := mux.NewRouter()
 	// Routes consist of a path and a handler function.
 	r.HandleFunc("/get", GetRqstHandler).Methods("GET")
